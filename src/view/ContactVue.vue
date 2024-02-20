@@ -22,8 +22,8 @@
                     <p>· 1 hour from Wuxi Airport by car</p>
                     <p>· 1 hour from Wuxi Airport by car</p>
                     <p>· 1 hour from Changzhou by car </p>
-                    <p>· 4 hour from NINGBO Airport by railway</p>
-                    <p>· 3 minutes from Hangzhou by Railway</p>
+                    <p>· 4 hours from Ningbo Airport by railway</p>
+                    <p>· 3 hours from Hangzhou by Railway</p>
                 </section>
                 <p>There are many railways from SHANGHAI， HANGZHOU，BEIJING， <br> to SUZHOU & ZHANGJIAGANG station everyday.</p>
 
@@ -36,9 +36,9 @@
     <div class="lxCon">
         <div class="lxConLeft">
             <h2>SUZHOU TOLEEZY INDUSTRIAL CO., LTD.</h2>
-            <h3>
+            <!-- <h3>
                 <img src="../assets/titleImg.jpeg" alt="" sizes="" srcset="">
-            </h3>
+            </h3> -->
             <div class="lxConBox">
                 <p>
                     <span><img src="../assets/email.jpeg" alt=""><b>Email</b></span>

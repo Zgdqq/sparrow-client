@@ -6,15 +6,15 @@
                     <ul>
                         <li>
                             <i class="fa fa-location-arrow"></i>
-                            <span>Nantong Science and Technology Park, No. 58</span>
+                            <span>Toleezy is located in Suzhou, Jiangsu Province, which is conveniently situated near Shanghai, approximately a one and a half hour drive to the north. Suzhou is situated at the mouth of the Yangtse River (Changjiang River) and boasts its own sea harbor, providing excellent transportation facilities.</span>
                         </li>
                         <li>
                             <i class="fa fa-phone"></i>
-                            <span>0513-88888888</span>
+                            <span>0512-58251685</span>
                         </li>
                         <li>
                             <i class="fa fa-fax"></i>
-                            <span>00000</span>
+                            <span>215611</span>
                         </li>
                     </ul>
                 </div>
@@ -112,6 +112,7 @@
         color: var(--main-color-white);
         font-size: 14px;
         margin-left: 10px;
+        padding: 0 60px 0 0;
     }
     .footitem2 {
         display: flex;

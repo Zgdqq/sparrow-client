@@ -55,26 +55,14 @@
             <div class="con3conright">
                 <strong>ABOUT US</strong>
                 <p>
-                    xxxxxx is one government-registered enterprise who designs and supplies
-                    new tires for truck,passenger car and off the road vehicles such as
-                    loader,forklift and farm tractor. Brand names are: GOLDTRUST brand
-                    tires, MAXTIRES brand tires. In current stage we have 500 staffs
-                    including 10 technicians and 20 salesmen. Our sales volume has also
-                    rised up to USD10millions. Excellent suppliers of raw materials and
-                    products, China banks and local government and transport fleets, our
-                    professional workers,all these valued members are strong forces to our
-                    growth for 30 years. By offering good -quality products and satisfied
-                    services,embracing market changes with new solutions, we are achieving
-                    more approvals from global dealers in over 60 countries. Offering
-                    long-term profits to dealers is our first aim. We sincerely invite you
-                    to cooperate for bigger success.
+                    We place great emphasis on meeting the specific requirements of our customers and meticulously attending to every detail. We are committed to providing exceptional service and continuously striving to achieve greater heights. We humbly extend our willingness to engage with both new and existing customers, taking the opportunity to gain a deeper understanding of your enterprise in order to deliver high-quality products, prompt delivery, and professional service.
                 </p>
                 <a href="">Learn More</a>
             </div>
         </div>
     </div>
 
-    <div class="conD">
+    <!-- <div class="conD">
         <div class="con4con">
             <div class="contitle">
                 <strong>COMPANY NEWS</strong>
@@ -135,7 +123,7 @@
             </ul>
             <div class="more1" style="cursor: pointer">view all</div>
         </div>
-    </div>
+    </div> -->
 
     <div class="conE">
         <div class="con5con">

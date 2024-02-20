@@ -150,7 +150,7 @@ We prioritize customer inquiries and orders, providing efficient service with pr
 .inbanner {
             width: 100%;
             height: 300px;
-            background-image: url(../assets/Tbj.jpeg);
+            background-image: url(../assets/tbj.jpg);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
