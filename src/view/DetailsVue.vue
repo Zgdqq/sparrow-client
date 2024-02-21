@@ -17,7 +17,7 @@
     <span>&gt;</span>
     <a>{{ sjName }}</a>
     <span>&gt;</span>
-    <a>{{productsSwiper.name  }}</a>
+    <a>{{ productsSwiper.name }}</a>
   </div>
   <!--  -->
 
@@ -114,7 +114,12 @@
       <!-- 热门产品 -->
       <div class="ml_indexpro">
         <div class="conListAll">
-          <div class="conListItem" v-for="item in productList" :key="item.id" @click="gotoD(item.id)">
+          <div
+            class="conListItem"
+            v-for="item in productList"
+            :key="item.id"
+            @click="gotoD(item.id)"
+          >
             <div><img :src="item.img_link" alt="" srcset="" /></div>
             <p>{{ item.name }}</p>
           </div>
@@ -124,109 +129,107 @@
   </div>
 </template>
 <script setup>
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Navigation, Thumbs } from 'swiper/modules'
-import { ref, reactive, watch, onMounted } from 'vue'
-import { useRoute,useRouter } from 'vue-router'
-import { reqProductById, reqLevel2Products ,getParent } from '@/api'
-const thumbsSwiper = ref(null)
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation, Thumbs } from "swiper/modules";
+import { ref, reactive, watch, onMounted } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import { reqProductById, reqLevel2Products, getParent } from "@/api";
+const thumbsSwiper = ref(null);
 const setThumbsSwiper = (swiper) => {
-  thumbsSwiper.value = swiper
-}
+  thumbsSwiper.value = swiper;
+};
 
-onMounted(()=>{
-  console.log(routes.query,'query');
-  sjName.value = routes.query.title
+onMounted(() => {
+  console.log(routes.query, "query");
+  sjName.value = routes.query.title;
+});
+let sjName = ref("");
 
-})
-let sjName = ref('')
-
-const routes = useRoute()
+const routes = useRoute();
 watch(
   () => routes.params.id,
   (val) => {
     console.log(val);
-    getProductsSwiper(val)
-    getProductList(val)
+    getProductsSwiper(val);
+    getProductList(val);
   }
-)
-
+);
 
 let productsSwiper = reactive({
   id: 8,
-  name: 'PLIERS AND VICES',
-  des: 'PLIERS AND VICES',
+  name: "PLIERS AND VICES",
+  des: "PLIERS AND VICES",
   p_img: [
-    '/api/images/ffff3f4c446e5177807804201.png',
-    '/api/images/ffff3f4c446e5177807804203.png',
+    "/api/images/ffff3f4c446e5177807804201.png",
+    "/api/images/ffff3f4c446e5177807804203.png",
   ],
-  p_content_img: ['/api/images/ffff3f4c446e5177807804202.png'],
-  p_parameter_img: ['/api/images/ffff3f4c446e5177807804204.png'],
-  p_package_img: ['/api/images/ffff3f4c446e5177807804205.png'],
-})
+  p_content_img: ["/api/images/ffff3f4c446e5177807804202.png"],
+  p_parameter_img: ["/api/images/ffff3f4c446e5177807804204.png"],
+  p_package_img: ["/api/images/ffff3f4c446e5177807804205.png"],
+});
 
 const getProductsSwiper = async (id) => {
-  if (id=='' || id == null || id == undefined) {
-    id = routes.params.id
+  if (id == "" || id == null || id == undefined) {
+    id = routes.params.id;
   }
-  let { data: res } = await reqProductById(id)
+  let { data: res } = await reqProductById(id);
 
-  res.data.p_img = JSON.parse(res.data.p_img)
-  res.data.p_content_img = JSON.parse(res.data.p_content_img)
-  res.data.p_parameter_img = JSON.parse(res.data.p_parameter_img)
-  res.data.p_package_img = JSON.parse(res.data.p_package_img)
-//   console.log(res.data)
-  Object.assign(productsSwiper, res.data)
-}
-getProductsSwiper()
+  res.data.p_img = JSON.parse(res.data.p_img);
+  res.data.p_content_img = JSON.parse(res.data.p_content_img);
+  res.data.p_parameter_img = JSON.parse(res.data.p_parameter_img);
+  res.data.p_package_img = JSON.parse(res.data.p_package_img);
+  //   console.log(res.data)
+  Object.assign(productsSwiper, res.data);
+};
+getProductsSwiper();
 
-let productList = ref([])
+let productList = ref([]);
 const getProductList = async (id) => {
-  if (id == '' || id == null || id == undefined) {
-    id = routes.params.id
+  if (id == "" || id == null || id == undefined) {
+    id = routes.params.id;
   }
-  let {data:res} = await getParent(id);
-  let level2Id = res.data
-  let { data: res2 } = await reqLevel2Products(level2Id)
+  let { data: res } = await getParent(id);
+  let level2Id = res.data;
+  let { data: res2 } = await reqLevel2Products(level2Id);
   // console.log(res2.data);
-  res2.data.forEach(item => {
-    item.p_img = JSON.parse(item.p_img)
-    item.img_link = item.p_img[0]
-  })
-  productList.value = res2.data
-}
-getProductList()
+  res2.data.forEach((item) => {
+    item.p_img = JSON.parse(item.p_img);
+    item.img_link = item.p_img[0];
+  });
+  productList.value = res2.data;
+};
+getProductList();
 
-let contentShow = ref(true)
-let parameterShow = ref(false)
-let packageShow = ref(false)
+let contentShow = ref(true);
+let parameterShow = ref(false);
+let packageShow = ref(false);
 const contentShowClick = () => {
-  contentShow.value = true
-  parameterShow.value = false
-  packageShow.value = false
-}
+  contentShow.value = true;
+  parameterShow.value = false;
+  packageShow.value = false;
+};
 const parameterShowClick = () => {
-  contentShow.value = false
-  parameterShow.value = true
-  packageShow.value = false
-}
+  contentShow.value = false;
+  parameterShow.value = true;
+  packageShow.value = false;
+};
 const packageShowClick = () => {
-  contentShow.value = false
-  parameterShow.value = false
-  packageShow.value = true
-}
+  contentShow.value = false;
+  parameterShow.value = false;
+  packageShow.value = true;
+};
 
-const router = useRouter()
-// 
-function gotoD(id){
-  router.push(`/details/${id}`)
+const router = useRouter();
+//
+function gotoD(id) {
+  router.push(`/details/${id}`);
 }
 </script>
 <style scoped>
 .inbanner {
   width: 100%;
   height: 300px;
-  background-image: url(../assets/Tbj.jpeg);
+  background-image: url(../assets/tbj.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
