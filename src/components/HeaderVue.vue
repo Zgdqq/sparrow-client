@@ -186,9 +186,9 @@ onMounted(() => {
   color: #333333;
 }
 
-.pc_sec_item:hover ul {
+/* .pc_sec_item:hover ul {
   display: block;
-}
+} */
 
 .pc_sec_item > ul > li:hover a {
   color: #e60012;
